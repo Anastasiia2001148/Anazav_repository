@@ -1,0 +1,30 @@
+from sqlalchemy import Column, String, Date, Integer,ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+from pydantic import BaseModel
+Base = declarative_base()
+
+class Contact(Base):
+    __tablename__ = 'contapp'
+
+    id = Column(Integer, primary_key=True, index=True)
+    first_name = Column(String, index=True)
+    last_name = Column(String, index=True)
+    email = Column(String, unique=True, index=True)
+    phone_number = Column(String)
+    birthday = Column(Date)
+    additional_data = Column(String)
+    user_id = Column(Integer, ForeignKey('users.id'))
+
+    user = relationship("User", back_populates="contacts")
+
+class User(Base):
+    __tablename__ = 'users'
+    id =  Column(Integer, primary_key=True, index=True)
+    email = Column(String,unique=True, index=True)
+    hashed_password = Column(String)
+    contacts = relationship('Contact', back_populates='user')
+class Token(BaseModel):
+    access_token: str
+    token_type:str
+    refresh_token:str
