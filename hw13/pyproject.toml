@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "hw11-3"
+version = "0.1.0"
+description = ""
+authors = ["Anastasiia2001148 <164914414+Anastasiia2001148@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "hw11"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.0"
+uvicorn = "^0.31.0"
+sqlalchemy = "^2.0.35"
+alembic = "^1.13.3"
+asyncpg = "^0.29.0"
+greenlet = "^3.1.1"
+psycopg2 = "^2.9.10"
+passlib = "^1.7.4"
+python-jose = "^3.3.0"
+python-dotenv = "^1.0.1"
+pydantic-settings = "^2.6.1"
+fastapi-mail = "^1.4.1"
+email-validator = "^2.2.0"
+redis = "4.6.0"
+fastapi-limiter = "^0.1.6"
+cloudinary = "^1.41.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
