@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "example"
+version = "0.1.0"
+description = ""
+authors = ["Anastasiia2001148 <164914414+Anastasiia2001148@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.1"
+black = "^24.8.0"
+pymongo = "^4.9.1"
+mongoengine = "^0.29.1"
+python-decouple = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
